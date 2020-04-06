@@ -135,7 +135,8 @@ The Vivus constructor asks for 3 parameters:
 | `dashGap`            | integer  | Whitespace extra margin between dashes. Increase it in case of glitches at the initial state of the animation. [Default: `2`]                                                                                   |
 | `forceRender`        | boolean  | Force the browser to re-render all updated path items. By default, the value is `true` on IE only. (check the 'troubleshoot' section for more details).                                                         |
 | `reverseStack`       | boolean  | Reverse the order of execution. The default behaviour is to render from the first 'path' in the SVG to the last one. This option allow you to reverse the order. [Default: `false`]                             |
-| `selfDestroy`        | boolean  | Removes all extra styling on the SVG, and leaves it as original.                                                                                                                                                |
+| `selfDestroy`        | boolean  | Removes all extra styling on the SVG, and leaves it as original.    
+| `pathId`             | string   | ID of a specific path to animate within the SVG. All other paths will be ignored.                                                                                                                                           |
 
 ### Methods
 

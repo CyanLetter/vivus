@@ -559,6 +559,9 @@ Vivus.prototype.setOptions = function(options) {
   this.animTimingFunction = options.animTimingFunction || Vivus.LINEAR;
   this.pathTimingFunction = options.pathTimingFunction || Vivus.LINEAR;
 
+    // allow animation of a single path within svg file
+  this.pathId = options.pathId || null;
+
   if (this.delay >= this.duration) {
     throw new Error('Vivus [constructor]: delay must be shorter than duration');
   }
@@ -1002,6 +1005,10 @@ Vivus.prototype.isInvisible = function(el) {
 
   if (ignoreAttr !== null) {
     return ignoreAttr !== 'false';
+  }
+
+  if (this.pathId !== null) {
+    return el.id !== this.pathId;
   }
 
   if (this.ignoreInvisible) {
